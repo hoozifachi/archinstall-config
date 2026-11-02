@@ -18,8 +18,7 @@
         "uki": false
     },
     "custom_commands": [
-        "sed -i 's|^command = .*|command = \"tuigreet --time --remember --cmd Hyprland\"|' /etc/greetd/config.toml",
-        "install -d -o greeter -g greeter -m 0755 /var/cache/tuigreet"
+        "mkdir -p /etc/sddm.conf.d && printf '[Autologin]\\nUser=hoozifachi\\nSession=hyprland.desktop\\n' > /etc/sddm.conf.d/autologin.conf"
     ],
     "firmware_optdeps": [],
     "hostname": "archlinux",
@@ -375,9 +374,7 @@
     "ntp": true,
     "packages": [
         "git",
-        "firefox",
-        "greetd",
-        "greetd-tuigreet"
+        "firefox"
     ],
     "pacman_config": {
         "color": true,
@@ -385,7 +382,7 @@
     },
     "profile_config": {
         "gfx_driver": null,
-        "greeter": null,
+        "greeter": "sddm",
         "profile": {
             "custom_settings": {
                 "Hyprland": {
@@ -399,9 +396,7 @@
         }
     },
     "script": null,
-    "services": [
-        "greetd"
-    ],
+    "services": [],
     "swap": {
         "algorithm": "zstd",
         "enabled": true
