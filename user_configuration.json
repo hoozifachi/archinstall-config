@@ -18,7 +18,8 @@
         "uki": false
     },
     "custom_commands": [
-        "sed -i 's|^command = .*|command = \"tuigreet --time --remember --cmd Hyprland\"|' /etc/greetd/config.toml"
+        "sed -i 's|^command = .*|command = \"tuigreet --time --remember --cmd Hyprland\"|' /etc/greetd/config.toml",
+        "install -d -o greeter -g greeter -m 0755 /var/cache/tuigreet"
     ],
     "firmware_optdeps": [],
     "hostname": "archlinux",
