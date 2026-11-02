@@ -1,0 +1,501 @@
+{
+    "app_config": {
+        "audio_config": {
+            "audio": "pipewire"
+        },
+        "bluetooth_config": {
+            "enabled": true
+        },
+        "print_service_config": {
+            "enabled": true
+        }
+    },
+    "archinstall_language": "English",
+    "auth_config": {},
+    "bootloader_config": {
+        "bootloader": "Grub",
+        "removable": false,
+        "uki": false
+    },
+    "custom_commands": [
+        "sed -i 's|^command = .*|command = \"tuigreet --time --remember --cmd Hyprland\"|' /etc/greetd/config.toml"
+    ],
+    "disk_config": {
+        "btrfs_options": {
+            "snapshot_config": {
+                "type": "Snapper"
+            }
+        },
+        "config_type": "default_layout",
+        "device_modifications": [
+            {
+                "device": "/dev/vda",
+                "partitions": [
+                    {
+                        "btrfs": [],
+                        "dev_path": null,
+                        "flags": [
+                            "boot"
+                        ],
+                        "fs_type": "fat32",
+                        "mount_options": [],
+                        "mountpoint": "/boot",
+                        "obj_id": "ac19f7ba-d25a-4f1c-8118-9a5b4a8d3456",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "GiB",
+                            "value": 1
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "MiB",
+                            "value": 1
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    },
+                    {
+                        "btrfs": [
+                            {
+                                "mountpoint": "/",
+                                "name": "@"
+                            },
+                            {
+                                "mountpoint": "/home",
+                                "name": "@home"
+                            },
+                            {
+                                "mountpoint": "/var/log",
+                                "name": "@log"
+                            },
+                            {
+                                "mountpoint": "/var/cache/pacman/pkg",
+                                "name": "@pkg"
+                            }
+                        ],
+                        "dev_path": null,
+                        "flags": [],
+                        "fs_type": "btrfs",
+                        "mount_options": [
+                            "compress=zstd"
+                        ],
+                        "mountpoint": null,
+                        "obj_id": "52e00a6a-80d6-4269-a72f-2a23ead42a22",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 20400046080
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 1074790400
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    }
+                ],
+                "wipe": true
+            }
+        ]
+    },
+    "firmware_optdeps": [],
+    "hostname": "archlinux",
+    "kernels": [
+        "linux"
+    ],
+    "locale_config": {
+        "console_font": "default8x16",
+        "kb_layout": "us",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US.UTF-8"
+    },
+    "mirror_config": {
+        "custom_repositories": [],
+        "custom_servers": [
+            {
+                "url": "http://mirrors.rit.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirrors.rit.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.umd.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.umd.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://ftp.osuosl.org/pub/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://ftp.osuosl.org/pub/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirrors.lug.mtu.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirrors.lug.mtu.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirrors.xmission.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirrors.kernel.org/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirrors.kernel.org/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirrors.cat.pdx.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.sfo12.us.leaseweb.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.wdc1.us.leaseweb.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.sfo12.us.leaseweb.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.wdc1.us.leaseweb.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirrors.gigenet.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirrors.liquidweb.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.metrocast.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://dfw.mirror.rackspace.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://ord.mirror.rackspace.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://dfw.mirror.rackspace.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://ord.mirror.rackspace.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.vtti.vt.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://arch.mirror.constant.com/$repo/os/$arch"
+            },
+            {
+                "url": "https://arch.mirror.constant.com/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirrors.acm.wpi.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirrors.ocf.berkeley.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirrors.ocf.berkeley.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.math.princeton.edu/pub/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://us.mirrors.cicku.me/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://us.mirrors.cicku.me/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.cs.vt.edu/pub/ArchLinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirrors.sonic.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirrors.sonic.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://distro.ibiblio.org/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://repo.miserver.it.umich.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirrors.xtom.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirrors.xtom.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.siena.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://repo.ialab.dsu.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://repo.ialab.dsu.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://iad.mirrors.misaka.one/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://iad.mirrors.misaka.one/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.arizona.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.arizona.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://archmirror1.octyl.net/$repo/os/$arch"
+            },
+            {
+                "url": "https://archmirror1.octyl.net/$repo/os/$arch"
+            },
+            {
+                "url": "http://plug-mirror.rcac.purdue.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://plug-mirror.rcac.purdue.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirrors.mit.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirrors.mit.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://zxcvfdsa.com/arch/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.clarkson.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.clarkson.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirrors.bloomu.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirrors.bloomu.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://codingflyboy.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://coresite.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://forksystems.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://irltoolkit.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://nnenix.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://nocix.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://ohioix.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://southfront.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://volico.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://codingflyboy.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://coresite.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://forksystems.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://irltoolkit.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://nnenix.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://nocix.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://ohioix.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://southfront.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://volico.mm.fcix.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://losangeles.mirror.pkgbuild.com/$repo/os/$arch"
+            },
+            {
+                "url": "https://arch.mirror.k0.ae/$repo/os/$arch"
+            },
+            {
+                "url": "https://m.lqy.me/arch/$repo/os/$arch"
+            },
+            {
+                "url": "https://arch.goober.cloud/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.pilotfiber.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirrors.iu13.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirrors.iu13.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.colonelhosting.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.colonelhosting.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://arch.mirror.marcusspencer.us:4443/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://arch.miningtcup.me/$repo/os/$arch"
+            },
+            {
+                "url": "https://arch.miningtcup.me/$repo/os/$arch"
+            },
+            {
+                "url": "https://arch-mirror.brightlight.today/$repo/os/$arch"
+            },
+            {
+                "url": "https://yonderly.org/mirrors/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.givebytes.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror2.givebytes.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror3.givebytes.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror4.givebytes.net/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirrors.shr.cx/arch/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.mra.sh/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.mra.sh/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.cs.odu.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.cs.odu.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://arch.hugeblank.dev/$repo/os/$arch"
+            },
+            {
+                "url": "https://arch.hugeblank.dev/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirrors.logal.dev/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.tzulo.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.tzulo.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.lug.umbc.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.lug.umbc.edu/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://us.mirrors.mk/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "http://mirror.kalem.dev/archlinux/$repo/os/$arch"
+            },
+            {
+                "url": "https://mirror.kalem.dev/archlinux/$repo/os/$arch"
+            }
+        ],
+        "mirror_regions": {},
+        "optional_repositories": []
+    },
+    "network_config": {
+        "type": "nm"
+    },
+    "ntp": true,
+    "packages": [
+        "git",
+        "firefox",
+        "greetd",
+        "greetd-tuigreet"
+    ],
+    "pacman_config": {
+        "color": true,
+        "parallel_downloads": 5
+    },
+    "profile_config": {
+        "gfx_driver": "VirtualBox (open-source)",
+        "greeter": null,
+        "profile": {
+            "custom_settings": {
+                "Hyprland": {
+                    "seat_access": "seatd"
+                }
+            },
+            "details": [
+                "Hyprland"
+            ],
+            "main": "Desktop"
+        }
+    },
+    "script": null,
+    "services": [
+        "greetd"
+    ],
+    "swap": {
+        "algorithm": "zstd",
+        "enabled": true
+    },
+    "timezone": "America/Chicago",
+    "version": "4.5"
+}
