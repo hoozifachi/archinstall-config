@@ -20,97 +20,6 @@
     "custom_commands": [
         "sed -i 's|^command = .*|command = \"tuigreet --time --remember --cmd Hyprland\"|' /etc/greetd/config.toml"
     ],
-    "disk_config": {
-        "btrfs_options": {
-            "snapshot_config": {
-                "type": "Snapper"
-            }
-        },
-        "config_type": "default_layout",
-        "device_modifications": [
-            {
-                "device": "/dev/vda",
-                "partitions": [
-                    {
-                        "btrfs": [],
-                        "dev_path": null,
-                        "flags": [
-                            "boot"
-                        ],
-                        "fs_type": "fat32",
-                        "mount_options": [],
-                        "mountpoint": "/boot",
-                        "obj_id": "ac19f7ba-d25a-4f1c-8118-9a5b4a8d3456",
-                        "size": {
-                            "sector_size": {
-                                "unit": "B",
-                                "value": 512
-                            },
-                            "unit": "GiB",
-                            "value": 1
-                        },
-                        "start": {
-                            "sector_size": {
-                                "unit": "B",
-                                "value": 512
-                            },
-                            "unit": "MiB",
-                            "value": 1
-                        },
-                        "status": "create",
-                        "type": "primary"
-                    },
-                    {
-                        "btrfs": [
-                            {
-                                "mountpoint": "/",
-                                "name": "@"
-                            },
-                            {
-                                "mountpoint": "/home",
-                                "name": "@home"
-                            },
-                            {
-                                "mountpoint": "/var/log",
-                                "name": "@log"
-                            },
-                            {
-                                "mountpoint": "/var/cache/pacman/pkg",
-                                "name": "@pkg"
-                            }
-                        ],
-                        "dev_path": null,
-                        "flags": [],
-                        "fs_type": "btrfs",
-                        "mount_options": [
-                            "compress=zstd"
-                        ],
-                        "mountpoint": null,
-                        "obj_id": "52e00a6a-80d6-4269-a72f-2a23ead42a22",
-                        "size": {
-                            "sector_size": {
-                                "unit": "B",
-                                "value": 512
-                            },
-                            "unit": "B",
-                            "value": 20400046080
-                        },
-                        "start": {
-                            "sector_size": {
-                                "unit": "B",
-                                "value": 512
-                            },
-                            "unit": "B",
-                            "value": 1074790400
-                        },
-                        "status": "create",
-                        "type": "primary"
-                    }
-                ],
-                "wipe": true
-            }
-        ]
-    },
     "firmware_optdeps": [],
     "hostname": "archlinux",
     "kernels": [
@@ -474,7 +383,7 @@
         "parallel_downloads": 5
     },
     "profile_config": {
-        "gfx_driver": "VirtualBox (open-source)",
+        "gfx_driver": null,
         "greeter": null,
         "profile": {
             "custom_settings": {
