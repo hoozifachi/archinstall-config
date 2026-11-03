@@ -19,10 +19,12 @@ packages=(
   hyprland
   uwsm
   xdg-desktop-portal-hyprland
+  xdg-desktop-portal-gtk   # file chooser, which the Hyprland portal lacks
   qt5-wayland
   qt6-wayland
   polkit
-  polkit-kde-agent
+  hyprpolkitagent
+  ttf-jetbrains-mono-nerd
   kitty
   wofi
   dolphin
@@ -54,6 +56,10 @@ services=(
 
 pacman -Syu --needed --noconfirm "${packages[@]}"
 systemctl enable "${services[@]}"
+
+# Polkit agent as a user service for every user; UWSM starts it with the
+# Hyprland session (graphical-session.target).
+systemctl --global enable hyprpolkitagent.service
 
 # SDDM autologin straight into Hyprland, launched via UWSM.
 install -Dm644 /dev/stdin /etc/sddm.conf.d/autologin.conf <<EOF
