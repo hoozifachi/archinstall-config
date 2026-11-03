@@ -375,6 +375,7 @@
     "packages": [
         "git",
         "firefox",
+        "neovim",
         "uwsm"
     ],
     "pacman_config": {
