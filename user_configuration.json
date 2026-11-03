@@ -18,7 +18,7 @@
         "uki": false
     },
     "custom_commands": [
-        "mkdir -p /etc/sddm.conf.d && printf '[Autologin]\\nUser=hoozifachi\\nSession=hyprland.desktop\\n' > /etc/sddm.conf.d/autologin.conf"
+        "mkdir -p /etc/sddm.conf.d && printf '[Autologin]\\nUser=hoozifachi\\nSession=hyprland-uwsm.desktop\\n' > /etc/sddm.conf.d/autologin.conf"
     ],
     "firmware_optdeps": [],
     "hostname": "archlinux",
@@ -374,7 +374,8 @@
     "ntp": true,
     "packages": [
         "git",
-        "firefox"
+        "firefox",
+        "uwsm"
     ],
     "pacman_config": {
         "color": true,
