@@ -17,9 +17,7 @@
         "removable": false,
         "uki": false
     },
-    "custom_commands": [
-        "mkdir -p /etc/sddm.conf.d && printf '[Autologin]\\nUser=hoozifachi\\nSession=hyprland-uwsm.desktop\\n' > /etc/sddm.conf.d/autologin.conf"
-    ],
+    "custom_commands": [],
     "firmware_optdeps": [],
     "hostname": "archlinux",
     "kernels": [
@@ -373,12 +371,7 @@
     },
     "ntp": true,
     "packages": [
-        "git",
-        "mako",
-        "libnotify",
-        "firefox",
-        "neovim",
-        "uwsm"
+        "git"
     ],
     "pacman_config": {
         "color": true,
@@ -386,17 +379,11 @@
     },
     "profile_config": {
         "gfx_driver": null,
-        "greeter": "sddm",
+        "greeter": null,
         "profile": {
-            "custom_settings": {
-                "Hyprland": {
-                    "seat_access": "seatd"
-                }
-            },
-            "details": [
-                "Hyprland"
-            ],
-            "main": "Desktop"
+            "custom_settings": {},
+            "details": [],
+            "main": "Minimal"
         }
     },
     "script": null,

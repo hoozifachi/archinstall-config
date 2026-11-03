@@ -35,10 +35,11 @@ if virsh dominfo "$name" &>/dev/null; then
   fi
 fi
 
-# Serve the config plus a boot script. archiso's script= kernel parameter makes
-# the live ISO download and run that script on tty1 after autologin.
+# Serve the config, setup.sh and a boot script. archiso's script= kernel
+# parameter makes the live ISO download and run that script on tty1 after
+# autologin.
 serve=$(mktemp -d)
-cp "$repo/user_configuration.json" "$serve/"
+cp "$repo/user_configuration.json" "$repo/setup.sh" "$serve/"
 cat >"$serve/install.sh" <<EOF
 #!/bin/bash
 url=http://$host_ip:$port/user_configuration.json
@@ -51,7 +52,17 @@ if [[ ! -s /root/user_configuration.json ]]; then
   echo "!! On the host: sudo ufw allow in on virbr0 to any port $port proto tcp"
   exit 1
 fi
+curl -fsS -o /root/setup.sh "http://$host_ip:$port/setup.sh" || {
+  echo "!! Could not fetch setup.sh"; exit 1; }
 archinstall --config /root/user_configuration.json
+# archinstall leaves the new system mounted at /mnt when you pick "Exit".
+if ! mountpoint -q /mnt; then
+  echo "!! /mnt is not mounted; pick 'Exit' (not 'Reboot') at the end of archinstall"
+  exit 1
+fi
+install -m755 /root/setup.sh /mnt/root/setup.sh
+arch-chroot /mnt /root/setup.sh
+reboot
 EOF
 python3 -m http.server "$port" --bind "$host_ip" --directory "$serve" &>/dev/null &
 server_pid=$!
